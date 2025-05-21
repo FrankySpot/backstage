@@ -24,7 +24,9 @@ export type NewNotificationSignal = {
 };
 
 // @public (undocumented)
-type Notification_2 = {
+type Notification_2<
+  T extends Record<string, unknown> = Record<string, unknown>,
+> = {
   id: string;
   user: string | null;
   created: Date;
@@ -32,12 +34,14 @@ type Notification_2 = {
   read?: Date;
   updated?: Date;
   origin: string;
-  payload: NotificationPayload;
+  payload: NotificationPayload<T>;
 };
 export { Notification_2 as Notification };
 
 // @public (undocumented)
-export type NotificationPayload = {
+export type NotificationPayload<
+  T extends Record<string, unknown> = Record<string, unknown>,
+> = {
   title: string;
   description?: string;
   link?: string;
@@ -45,6 +49,7 @@ export type NotificationPayload = {
   topic?: string;
   scope?: string;
   icon?: string;
+  attributes?: T;
 };
 
 // @public (undocumented)
