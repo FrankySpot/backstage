@@ -406,8 +406,8 @@ describe.each(databases.eachSupportedId())('createRouter (%s)', databaseId => {
         title: 'Test broadcast notification',
         created: new Date(),
         severity: 'high',
-        attributes: {
-          attr1: 'attrValue',
+        metadata: {
+          attr1: 'value1',
         },
       });
       await client('notification').insert({
@@ -417,8 +417,8 @@ describe.each(databases.eachSupportedId())('createRouter (%s)', databaseId => {
         title: 'Test notification',
         created: new Date(),
         severity: 'normal',
-        attributes: {
-          attr1: 'attrValue',
+        metadata: {
+          attr1: 'value1',
         },
       });
 
@@ -438,8 +438,8 @@ describe.each(databases.eachSupportedId())('createRouter (%s)', databaseId => {
               severity: 'normal',
               title: 'Test notification',
               topic: null,
-              attributes: {
-                attr1: 'attrValue',
+              metadata: {
+                attr1: 'value1',
               },
             },
             read: null,
@@ -459,8 +459,8 @@ describe.each(databases.eachSupportedId())('createRouter (%s)', databaseId => {
               severity: 'high',
               title: 'Test broadcast notification',
               topic: null,
-              attributes: {
-                attr1: 'attrValue',
+              metadata: {
+                attr1: 'value1',
               },
             },
             read: null,
